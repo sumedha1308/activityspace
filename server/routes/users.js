@@ -1,41 +1,42 @@
-const express = require("express");
-const router = express.Router();
-const auth = require("../middlewares/auth");
-const UserCredential = require("../models/user-credential");
-const User = require("../models/user");
-const bcrypt = require("bcryptjs");
+/* eslint-disable no-shadow */
+const express = require('express');
 
-router.post("/", (req, res) => {
+const router = express.Router();
+const bcrypt = require('bcryptjs');
+const auth = require('../middlewares/auth');
+const UserCredential = require('../models/user-credential');
+const User = require('../models/user');
+
+router.post('/', (req, res) => {
   if (!req.body) {
-    res
-      .status(400)
-      .send({ error: "Email and Password not present in request" });
+    res.status(400).send({ error: 'Email and Password not present in request' });
     return;
   }
 
   const { email, password } = req.body;
 
   if (!email) {
-    res.status(400).send({ error: "Email not present in request" });
+    res.status(400).send({ error: 'Email not present in request' });
     return;
   }
 
   if (!password) {
-    res.status(400).send({ error: "Password not present in request" });
+    res.status(400).send({ error: 'Password not present in request' });
     return;
   }
 
   UserCredential.findOne({ email })
     .then((user) => {
       if (user) {
-        res.status(400).send({ error: "User already signed up" });
+        res.status(400).send({ error: 'User already signed up' });
         return;
       }
       let hash;
       try {
         hash = bcrypt.hashSync(password);
       } catch (err) {
-        return res.status(500).send({ error: "Some unknown error occured" });
+        // eslint-disable-next-line consistent-return
+        return res.status(500).send({ error: 'Some unknown error occured' });
       }
 
       const userCredential = new UserCredential({ email, password: hash });
@@ -48,33 +49,33 @@ router.post("/", (req, res) => {
       });
     })
     .catch(() => {
-      res.status(500).send({ error: "Internal Server Error" });
+      res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
-router.get("/me", auth.authenticate, (req, res) => {
+router.get('/me', auth.authenticate, (req, res) => {
   User.findOne({ _id: req.session.userId })
     .then((user) => {
       res.send(user);
     })
     .catch(() => {
-      res.status(500).send({ error: "Internal Server Error" });
+      res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
-router.get("/:userId", (req, res) => {
+router.get('/:userId', (req, res) => {
   User.findOne({ _id: req.params.userId })
     .then((user) => {
       res.send(user);
     })
     .catch(() => {
-      res.status(500).send({ error: "Internal Server Error" });
+      res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
-router.put("/me", auth.authenticate, (req, res) => {
+router.put('/me', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
-    res.send(401).send({ error: "Not logged in" });
+    res.send(401).send({ error: 'Not logged in' });
   }
 
   const { firstName, lastName } = req.body;
@@ -88,7 +89,7 @@ router.put("/me", auth.authenticate, (req, res) => {
       res.status(204).send();
     })
     .catch(() => {
-      res.status(500).send({ error: "Internal Server Error" });
+      res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 

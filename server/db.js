@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+/* eslint-disable no-console */
+const mongoose = require('mongoose');
 
 const connect = (dbConfig) => {
   try {
@@ -26,9 +27,7 @@ const connect = (dbConfig) => {
   }
 };
 
-const getClient = () => {
-  return mongoose.connection.getClient();
-};
+const getClient = () => mongoose.connection.getClient();
 
 module.exports = {
   connect,
