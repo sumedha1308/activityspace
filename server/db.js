@@ -18,6 +18,7 @@ const connect = (dbConfig) => {
     return mongoose.connect(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useCreateIndex: true,
     });
   } catch (err) {
     console.log(`Error connecting to MongoDB: ${err}`);
