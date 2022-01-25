@@ -1,21 +1,22 @@
-const express = require("express");
-const path = require("path");
-var genuuid = require("uuid").v4;
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
+/* eslint-disable no-console */
+const express = require('express');
+const path = require('path');
+const genuuid = require('uuid').v4;
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 
-const api = require("./server/api");
-const db = require("./server/db");
+const api = require('./server/api');
+const db = require('./server/db');
 
-//Configure .env
-require("dotenv").config();
+// Configure .env
+require('dotenv').config();
 
-//Set port as process.env.PORT if it is present otherwise set it to 4000
+// Set port as process.env.PORT if it is present otherwise set it to 4000
 const port = process.env.PORT || 4000;
 
-//Initiate connection with database
+// Initiate connection with database
 db.connect({
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
@@ -23,9 +24,9 @@ db.connect({
   database: process.env.DB_NAME,
 })
   .then(() => {
-    //Handle /api with the api middleware
+    // Handle /api with the api middleware
     app.use(
-      "/api",
+      '/api',
       session({
         genid() {
           return genuuid(); // use UUIDs for session IDs
@@ -35,18 +36,18 @@ db.connect({
         resave: false,
         saveUninitialized: true,
       }),
-      api
+      api,
     );
 
-    //Handle non-api routes with static build folder
-    app.use(express.static(path.join(__dirname, "build")));
+    // Handle non-api routes with static build folder
+    app.use(express.static(path.join(__dirname, 'build')));
 
-    //Return index.html for routes not handled by build folder
-    app.get("*", function (req, res) {
-      res.sendFile(path.join(__dirname, "build", "index.html"));
+    // Return index.html for routes not handled by build folder
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
 
-    //Start listening on port
+    // Start listening on port
     app.listen(port, () => {
       console.log(`Server listening at port : ${port}`);
     });
