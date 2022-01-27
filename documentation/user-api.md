@@ -1,3 +1,4 @@
+<div id="top"></div>
 <p> Signup User </p>
 <p> E.g: http://localhost:4000/api/users/ </p>
 
@@ -5,7 +6,7 @@
 POST /api/users/
 Sample Request Body:
 {
-	"email": "test1@test.com",
+    "email": "test1@test.com",
     "password": "test1"
 }
 
@@ -27,7 +28,7 @@ Status: 201 (User Id), 500 (Internal Server Error)
 POST /api/users/
 Sample Request Body:
 {
-	"email": "test2@test.com",
+    "email": "test2@test.com",
     "password": "test2"
 }
 
@@ -45,7 +46,7 @@ Status: 200 (User Id), 500 (Internal Server Error)
 PUT /api/users/
 Sample Request Body:
 {
-	"firstName": "Sumedha",
+    "firstName": "Sumedha",
     "lastName": "Deshpande"
 }
 
@@ -73,7 +74,7 @@ Sample Response Body:
 }
 
 Status: 200 (Valid User), 404 (User does not exist)
-```js
+```
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 <br>
@@ -89,7 +90,8 @@ Sample Response Body:
 }
 
 Status: 200 (Valid User), 500 (Internal Server Error)
-```js
+
+```
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 <br>
@@ -101,7 +103,7 @@ Status: 200 (Valid User), 500 (Internal Server Error)
 DELETE /api/sessions/me/
 
 Status: 204 (logout User)
-```js
+```
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 <br>
