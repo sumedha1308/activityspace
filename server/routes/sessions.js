@@ -4,6 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const UserCredential = require('../models/user-credential');
 
+// login user
 router.post('/', (req, res) => {
   if (!req.body) {
     res.status(400).send({ error: 'Email and Password not present in request' });
@@ -37,13 +38,14 @@ router.post('/', (req, res) => {
       }
 
       req.session.userId = user.id;
-      res.status(204).send();
+      res.status(204).send({ message: 'User logged in' });
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
+// logout user
 router.delete('/me', (req, res) => {
   delete req.session.userId;
   res.status(204).send();

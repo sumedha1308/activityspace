@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 const express = require('express');
 
@@ -7,6 +8,7 @@ const auth = require('../middlewares/auth');
 const UserCredential = require('../models/user-credential');
 const User = require('../models/user');
 
+// signup user
 router.post('/', (req, res) => {
   if (!req.body) {
     res.status(400).send({ error: 'Email and Password not present in request' });
@@ -53,26 +55,29 @@ router.post('/', (req, res) => {
     });
 });
 
+// login status
 router.get('/me', auth.authenticate, (req, res) => {
   User.findOne({ _id: req.session.userId })
     .then((user) => {
-      res.send(user);
+      res.status(200).send(user);
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
+// get user with userId
 router.get('/:userId', (req, res) => {
   User.findOne({ _id: req.params.userId })
     .then((user) => {
-      res.send(user);
+      res.status(200).send({ userName: user.firstName });
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
     });
 });
 
+// update firstName and LastName
 router.put('/me', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
     res.send(401).send({ error: 'Not logged in' });
