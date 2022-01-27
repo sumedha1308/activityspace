@@ -1,7 +1,8 @@
+<div id="top"></div>
 <p> Get all activities: </p>
 <p> E.g: http://localhost:4000/api/activities/ </p>
 
-````js
+```js
 
 GET /api/activities/
 
@@ -324,7 +325,7 @@ Sample Response Body:
 }
 Status: 200
 
-```js
+```
 
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -381,8 +382,8 @@ Sample Response Body:
 }
 Status: 200
 
-```js
+```
 
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
-````
+
