@@ -1,7 +1,8 @@
+<div id="top"></div>
 <p> Get review of individual activity : </p>
 <p> E.g: http://localhost:4000/api/reviews/1/ </p>
 
-````js
+```js
 GET /api/reviews/activityID
 
 Before updating review
@@ -30,7 +31,7 @@ Sample Response Body:
         }
     ]
 }
-```js
+```
 
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -39,11 +40,11 @@ Sample Response Body:
 
 <p> Add/Update review of individual activity : </p>
 <p> E.g: http://localhost:4000/api/reviews/ </p>
-
 <br>
+
 ```js
 POST /api/reviews/
-E.g: http://localhost:4000/api/reviews/
+
 Sample Request Body:
 {
     "newRating": "3",
@@ -57,7 +58,7 @@ Sample Response Body:
 }
 
 Status: 200 (Review Added), 501 (Internal server error!)
-````
+```
 
 <br>
 <p align="right">(<a href="#top">back to top</a>)</p>
