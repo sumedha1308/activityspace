@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
+.companyLogo  {
+  color:rgb(77, 80, 83);
+  text-decoration: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.companyLogo-icon {
+  width: 16%;
+  height: 50%;
+}
+.logoSpace {
+  color: #e82953;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+
+.signup:hover {
+  cursor: pointer;
+}
+
+.user-icon {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+#hamburger {
+  margin-top: 14px;
+}
+
+#hamburger:active{
+  background-color:#d4d4d4;
+
+}
+
+  .dropdown-content span {
+    display: block;
+    text-decoration: none;
+    min-width: 180px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 40px;
+    color:#555555;
+    background-color: #f6f8fa;
+    box-shadow: 1px 2px 2px rgb(0 0 0 / 10%), -1px -1px 2px rgb(0 0 0 / 8%);
+    
+  }
+  
+  .dropdown-content{
+    display: none;
+  }
+
+  .dropdown-content span:hover{
+    color:#000000;
+    background-color: #e7e7e7; 
+  }
+  
+  .dropdown-nav:hover .dropdown-content{
+        display: block;
+        position: absolute; 
+          
+  } 
+
+  .dropdown-nav:hover{
+    cursor: pointer;
+    color:#e82953;
+    
+  }
+
+
+  
+
+  .navbar {
+    /*added flex wrap..change in all*/
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 53px;
+        background-color: white;
+        position: sticky;
+        z-index: 999;
+        top: 0;
+        box-shadow: 1px 2px 2px rgb(0 0 0 / 10%), -1px -1px 2px rgb(0 0 0 / 8%);
+        
+  } 
+
+  .dropdown-arrow{
+    height: 10px;
+    width: 10px
+  }
+
