@@ -5,7 +5,7 @@ import React from 'react';
 import Footer from '../Footer/Footer.jsx';
 import NavBar from './NavBar/NavBar.jsx';
 import Banner from './Banner/Banner.jsx';
-import Product from './Spaces/spaces.jsx';
+import Space from './Spaces/spaces.jsx';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class HomePage extends React.Component {
         <div style={{ minHeight: 'calc(100vh - 31px)' }}>
           <NavBar />
           <Banner />
-          <Product />
+          <Space />
         </div>
         <Footer />
       </div>

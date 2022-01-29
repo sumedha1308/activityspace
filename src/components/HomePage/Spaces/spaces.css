@@ -46,11 +46,30 @@ body {
  .product-headline {
    color: #e82953;
    /* color:rgb(77, 80, 83); */
-   margin: 4%;
+   margin-top: 4%;
+   margin-left: 4%;
+   margin-right: 4%;
    font-size: 6vh;
  }
 
+ .spray-img {
+  background-color: #e82953;
+  margin-left: 4%;
+  margin-right: 1%;
+ }
 
+ .covid-safety {
+    color: black;
+    /* margin-right: 4%; */
+    margin-bottom: 3%;
+ }
+ 
+ .covidSafetyImage {
+   height: 250vh;
+   width: 250vw;
+   background-repeat: no-repeat;
+   margin: 4%;
+ }
  .card a:hover{
   
   text-decoration:none; 

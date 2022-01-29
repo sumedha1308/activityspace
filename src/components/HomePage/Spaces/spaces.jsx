@@ -7,9 +7,14 @@ function Product() {
   return (
     <div>
       <div className="product-headline">Find a unique space for your activity to throw an unforgettable event!!</div>
+      <div className="covid-safety">
+        <img className="spray-img" src="/activityPics/spray-bottle-white.svg"></img>
+        We’ve provided covid 19 guidelines and enhanced safety measures for owners so guests can book with peace of
+        mind.
+      </div>
       <main className="main-content">
         <div className="card">
-          <Link to="/products/605a37864a2a8cb97b9fd67b">
+          <Link to="/activities/1">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/Meeting_hall.jpg" />
             </div>
@@ -18,7 +23,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a37864a2a8cb97b9fd67c">
+          <Link to="/activities/2">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/durbar_conference.jpg" />
             </div>
@@ -27,7 +32,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a37864a2a8cb97b9fd67d">
+          <Link to="/activities/3">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/jsw_autorium_delhi.jpg" />
             </div>
@@ -36,7 +41,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a37864a2a8cb97b9fd67e">
+          <Link to="/activities/4">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/leela_goa_party.jpg" />
             </div>
@@ -45,7 +50,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a38634a2a8cb97b9fd680">
+          <Link to="/activities/5">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/date_high_ultra_banglore.jpg" />
             </div>
@@ -54,7 +59,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a3cd94a2a8cb97b9fd685">
+          <Link to="/activities/6">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/wedding-park-hyatt-goa.jpg" />
             </div>
@@ -63,7 +68,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a3dc44a2a8cb97b9fd692">
+          <Link to="/activities/7">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/baby_shower.jpg" />
             </div>
@@ -72,7 +77,7 @@ function Product() {
         </div>
 
         <div className="card">
-          <Link to="/products/605a3d914a2a8cb97b9fd68b">
+          <Link to="/activities/8">
             <div className="img-wrapper">
               <img className="card-img" src="/activityPics/Tamil-Nadu_Connemara_credit-Taj_family.jpg" />
             </div>

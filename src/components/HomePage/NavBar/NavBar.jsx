@@ -54,14 +54,14 @@ class NavBar extends React.Component {
             <img className="dropdown-arrow" src="/activityPics/down-arrow.svg" />
           </span>
           <div className="dropdown-content">
-            <span onClick={() => activitiesClick('Corporate Meetings')}>Corporate Meetings</span>
-            <span onClick={() => activitiesClick('Conferences')}>Conferences</span>
-            <span onClick={() => activitiesClick('Performance')}>Performance</span>
-            <span onClick={() => activitiesClick('Party')}>Party</span>
-            <span onClick={() => activitiesClick('Date')}>Date</span>
-            <span onClick={() => activitiesClick('Wedding')}>Wedding</span>
-            <span onClick={() => activitiesClick('Baby Shower')}>Baby Shower</span>
-            <span onClick={() => activitiesClick('Family get-together')}>Family get-together</span>
+            <span onClick={() => activitiesClick('1')}>Corporate Meetings</span>
+            <span onClick={() => activitiesClick('2')}>Conferences</span>
+            <span onClick={() => activitiesClick('3')}>Performance</span>
+            <span onClick={() => activitiesClick('4')}>Party</span>
+            <span onClick={() => activitiesClick('5')}>Date</span>
+            <span onClick={() => activitiesClick('6')}>Wedding</span>
+            <span onClick={() => activitiesClick('7')}>Baby Shower</span>
+            <span onClick={() => activitiesClick('8')}>Family get-together</span>
           </div>
         </div>
         <div className="dropdown-nav">
