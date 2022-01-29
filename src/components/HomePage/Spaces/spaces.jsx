@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 function Product() {
   return (
     <div>
-      <div className="product-headline" style={{ textAlign: 'center' }}>
-        Find a unique space for your activity to make it unforgettable!!
-      </div>
+      <div className="product-headline">Find a unique space for your activity to throw an unforgettable event!!</div>
       <main className="main-content">
         <div className="card">
           <Link to="/products/605a37864a2a8cb97b9fd67b">

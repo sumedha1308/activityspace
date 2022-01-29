@@ -9,12 +9,12 @@ function Banner() {
   return (
     <div className="App">
       <AliceCarousel autoPlay activeIndex infinite disableButtonsControls autoPlayInterval="3000">
-        <img src="/activityPics/Meeting_hall.jpg" className="sliderimg" alt="" />
-        <img src="/activityPics/durbar_conference.jpg" className="sliderimg" alt="" />
-        <img src="/activityPics/jsw_autorium_delhi.jpg" className="sliderimg" alt="" />
-        <img src="/activityPics/leela_goa_party.jpg" className="sliderimg" alt="" />
-        <img src="/activityPics/baby_shower.jpg" className="sliderimg" alt="" />
-        <img src="/activityPics/date_high_ultra_banglore.jpg" className="sliderimg" alt="" />
+        <img src="/next/meeting_next.jpg" className="sliderimg" alt="" />
+        <img src="/next/durbar_conference.jpg" className="sliderimg" alt="" />
+        <img src="/next/jsw_autorium_delhi.jpg" className="sliderimg" alt="" />
+        <img src="/next/leela_goa_party_next.jpg" className="sliderimg" alt="" />
+        <img src="/next/baby_shower.jpg" className="sliderimg" alt="" />
+        <img src="/next/date_high_ultra_banglore.jpg" className="sliderimg" alt="" />
       </AliceCarousel>
     </div>
   );

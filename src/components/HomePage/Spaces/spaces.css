@@ -46,7 +46,8 @@ body {
  .product-headline {
    color: #e82953;
    /* color:rgb(77, 80, 83); */
-   font-size: 40px;
+   margin: 4%;
+   font-size: 6vh;
  }
 
 
