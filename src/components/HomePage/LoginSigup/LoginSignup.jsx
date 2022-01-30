@@ -1,6 +1,12 @@
+/* eslint-disable no-shadow */
 /* eslint-disable class-methods-use-this */
+/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import './LoginSignup.css';
+import NavBar from '../NavBar/NavBar.jsx';
+import Footer from '../../Footer/Footer.jsx';
+// import './index.css';
 
 class LoginSignup extends React.Component {
   constructor(props) {
@@ -38,7 +44,7 @@ class LoginSignup extends React.Component {
     }).then((res) => {
       if (res.status === 204) {
         fetch('api/users/name')
-          .then((resParam) => resParam.json())
+          .then((res) => res.json())
           .then((name) => {
             localStorage.setItem('user', name.firstname);
             window.location = '/';
@@ -89,6 +95,7 @@ class LoginSignup extends React.Component {
             </form>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
