@@ -1,0 +1,12 @@
+.footer {
+  background-color: #e82953;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12%;
+  font-size: 24px;
+  color: black;
+  font-family: 'Nunito Sans', sans-serif;
+}
