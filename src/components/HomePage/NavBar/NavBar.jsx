@@ -35,22 +35,8 @@ class NavBar extends React.Component {
     const loginclick = () => (window.location = '/login');
 
     let temp = '';
-    let userFirstName = 'UnknowenUser';
-    const getFirstName = async () => {
-      axios
-        .get('/api/users/me')
-        .then((response) => {
-          // console.log(response);
-          userFirstName = response.user.firstName;
-          return userFirstName;
-        })
-        .catch((error) => {
-          this.setState({
-            isLoggedIn: false,
-          });
-        });
-    };
-    const loggedInUser = getFirstName();
+
+    const loggedInUser = localStorage.getItem('user');
     let logout;
     if (loggedInUser) {
       temp = `Hi, ${loggedInUser}`;
