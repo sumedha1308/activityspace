@@ -6,13 +6,14 @@
 POST /api/users/
 Sample Request Body:
 {
-    "email": "test1@test.com",
-    "password": "test1"
+    "userName": "Sumedha",
+    "lastName": "Deshpande",
+    "email": "test2@test2.com",
+    "password": "test2"
 }
-
 Sample Response Body:
 {
-	"id": "61f18e916794be39308279be"
+    "id": "61faab9029a14d64e84da49c"
 }
 Status: 201 (User Id), 500 (Internal Server Error)
 ```
@@ -28,8 +29,9 @@ Status: 201 (User Id), 500 (Internal Server Error)
 POST /api/users/
 Sample Request Body:
 {
-    "email": "test2@test.com",
-    "password": "test2"
+    "userName": "Sumedha",
+    "email": "test1@test.com",
+    "password": "test1"
 }
 
 Status: 200 (User Id), 500 (Internal Server Error)
@@ -64,13 +66,12 @@ Status: 204 (data updated), 500 (Internal Server Error)
 GET /api/users/me/
 Sample Response Body:
 {
-    "createdAt": "2022-01-27T07:05:32.029Z",
-    "updatedAt": "2022-01-27T07:05:32.029Z",
-    "_id": "61f24536fc69ec2b08c733c8",
-    "email": "test2@test.com",
-    "__v": 0,
-    "firstName": "Sumedha",
-    "lastName": "Deshpande"
+    "createdAt": "2022-02-02T16:03:07.394Z",
+    "updatedAt": "2022-02-02T16:03:07.394Z",
+    "_id": "61faab9029a14d64e84da49c",
+    "email": "test1@test.com",
+    "userName": "Sumedha",
+    "__v": 0
 }
 
 Status: 200 (Valid User), 404 (User does not exist)
@@ -88,7 +89,6 @@ Sample Response Body:
 {
     "userName": "Sumedha"
 }
-
 Status: 200 (Valid User), 500 (Internal Server Error)
 
 ```
