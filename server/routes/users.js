@@ -11,11 +11,11 @@ const User = require('../models/user');
 // signup user
 router.post('/', (req, res) => {
   if (!req.body) {
-    res.status(400).send({ error: 'Email and Password not present in request' });
+    res.status(400).send({ error: 'Username , lastname, Email and Password not present in request' });
     return;
   }
 
-  const { email, password } = req.body;
+  const { userName, email, password } = req.body;
 
   if (!email) {
     res.status(400).send({ error: 'Email not present in request' });
@@ -24,6 +24,10 @@ router.post('/', (req, res) => {
 
   if (!password) {
     res.status(400).send({ error: 'Password not present in request' });
+    return;
+  }
+  if (!userName) {
+    res.status(400).send({ error: 'userName not present in request' });
     return;
   }
 
@@ -41,10 +45,10 @@ router.post('/', (req, res) => {
         return res.status(500).send({ error: 'Some unknown error occured' });
       }
 
-      const userCredential = new UserCredential({ email, password: hash });
+      const userCredential = new UserCredential({ userName, email, password: hash });
 
       userCredential.save().then(() => {
-        const user = new User({ _id: userCredential.id, email });
+        const user = new User({ _id: userCredential.id, email, userName });
         user.save().then(() => {
           res.status(201).send({ id: userCredential.id });
         });
@@ -70,7 +74,7 @@ router.get('/me', auth.authenticate, (req, res) => {
 router.get('/:userId', (req, res) => {
   User.findOne({ _id: req.params.userId })
     .then((user) => {
-      res.status(200).send({ userName: user.firstName });
+      res.status(200).send({ userName: user.userName });
     })
     .catch(() => {
       res.status(500).send({ error: 'Internal Server Error' });
@@ -83,11 +87,10 @@ router.put('/me', auth.authenticate, (req, res) => {
     res.send(401).send({ error: 'Not logged in' });
   }
 
-  const { firstName, lastName } = req.body;
+  const { userName, lastName } = req.body;
 
   const updateQuery = {};
-  firstName !== undefined && (updateQuery.firstName = firstName);
-  lastName !== undefined && (updateQuery.lastName = lastName);
+  userName !== undefined && (updateQuery.username = userName);
 
   User.updateOne({ _id: req.session.userId }, updateQuery)
     .then(() => {
