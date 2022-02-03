@@ -17,6 +17,7 @@ function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/home" component={HomePage} />
         <Route exact path="/login" component={LoginSignup} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/profile" component={Profile} />

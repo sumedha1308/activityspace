@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     return;
   }
 
-  const { email, password } = req.body;
+  const { userName, email, password } = req.body;
 
   if (!email) {
     res.status(400).send({ error: 'Email not present in request' });
@@ -20,6 +20,11 @@ router.post('/', (req, res) => {
 
   if (!password) {
     res.status(400).send({ error: 'Password not present in request' });
+    return;
+  }
+
+  if (!userName) {
+    res.status(400).send({ error: 'userName not present in request' });
     return;
   }
 
