@@ -60,7 +60,7 @@ body {
   
   .dropdown-nav:hover .dropdown-content{
         display: block;
-        /* position: absolute;  */
+        position: absolute; 
           
   } 
 
