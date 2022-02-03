@@ -152,17 +152,17 @@ class LoginSignup extends React.Component {
 
                   <input className="signupBtn" type="submit" onClick={this.onSignupClick} value="SignUp"></input>
                 </div>
+                {this.state.error !== null ? (
+                  <div className="loginEmailValidation" style={{ color: 'red', fontSize: '16px' }}>
+                    {this.state.error}
+                    {/* {this.state.errorCode === 401 ? <a href="/signup">Signup</a> : null} */}
+                  </div>
+                ) : (
+                  ''
+                )}
               </form>
             </div>
           </div>
-          {this.state.error !== null ? (
-            <p style={{ color: 'red', fontSize: '16px' }}>
-              {this.state.error}
-              {this.state.errorCode === 401 ? <a href="/signup">Signup</a> : null}
-            </p>
-          ) : (
-            ''
-          )}
           <Footer />
         </div>
       </React.Fragment>

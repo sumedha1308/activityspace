@@ -34,19 +34,30 @@ class Navbar extends React.Component {
     const loginclick = () => (window.location = '/login');
     const temp = 'Log-in/Sign-up';
     const logout = 'logout';
-    // if (this.props.loginStatus) {
-    //   temp = `Hello, ${this.props.userName}`;
-    //   logout = 'Logout';
-    // } else {
-    //   temp = 'Log-in/Sign-up';
-    // }
     return (
       <React.Fragment>
-        {console.log('this.props.loginStatus', this.props.loginStatus)}
+        {/* {console.log('this.props.loginStatus', this.props.loginStatus)} */}
         <header className="navbar">
           <div className="companyLogo" onClick={logoClick}>
             <img className="companyLogo-icon" src="Logo-Full.jpg" />
             <span className="logoSpace">Activity</span>Space
+          </div>
+          <div className="dropdown-nav">
+            <img className="user-icon" src="/activityPics/user-login-icon.png" />
+            <div className="dropdown-content">
+              {!this.props.loginStatus ? (
+                <span className="box" onClick={loginclick}>
+                  {temp}
+                </span>
+              ) : (
+                <div>
+                  <span className="box">{`Hello, ${this.props.userName}`}</span>
+                  <span className="box" onClick={logoutclick}>
+                    {logout}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
           <div className="dropdown-nav">
             Activities{' '}
@@ -62,29 +73,6 @@ class Navbar extends React.Component {
               <span onClick={() => activitiesClick('6')}>Wedding</span>
               <span onClick={() => activitiesClick('7')}>Baby Shower</span>
               <span onClick={() => activitiesClick('8')}>Family get-together</span>
-            </div>
-          </div>
-          <div className="dropdown-nav">
-            <img className="user-icon" src="/activityPics/user-login-icon.png" />
-            <div className="dropdown-content">
-              {/* <span className="box" onClick={loginclick}>
-                {temp}
-              </span>
-              <span className="box" onClick={logoutclick}>
-                {logout}
-              </span> */}
-              {!this.props.loginStatus ? (
-                <span className="box" onClick={loginclick}>
-                  {temp}
-                </span>
-              ) : (
-                <div>
-                  <span className="box">{`Hello, ${this.props.userName}`}</span>
-                  <span className="box" onClick={logoutclick}>
-                    {logout}
-                  </span>
-                </div>
-              )}
             </div>
           </div>
         </header>

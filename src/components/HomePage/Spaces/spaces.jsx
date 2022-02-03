@@ -9,8 +9,10 @@ function Product() {
       <div className="product-headline">Find a unique space for your activity to throw an unforgettable event!!</div>
       <div className="covid-safety">
         <img className="spray-img" src="/activityPics/spray-bottle-white.svg"></img>
-        We’ve provided covid 19 guidelines and enhanced safety measures for owners so guests can book with peace of
-        mind.
+        <div className="covid-guideline">
+          We’ve provided covid 19 guidelines and enhanced safety measures for owners so guests can book with peace of
+          mind.
+        </div>
       </div>
       <main className="main-content">
         <div className="card">

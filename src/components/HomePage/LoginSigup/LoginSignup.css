@@ -65,3 +65,23 @@ body {
 .loginPass {
   margin: 30px;
 }
+
+@media screen and (max-width: 675px) {
+    .login_form {
+    width: 320px;
+    height: 350px;
+    background: #fff;
+    border-radius: 5px;
+    border: solid 1px;
+    margin-left: 5%;
+    }
+    .loginEmail {
+    margin: 20px;
+    padding-left: 10px;
+   }
+   .loginEmailValidation {
+     color: red;
+     font-size: 16px;
+     margin-left: 5%;
+   }
+  }

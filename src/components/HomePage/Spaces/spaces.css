@@ -61,15 +61,18 @@ body {
    font-size: 6vh;
  }
 
- .spray-img {
+   .spray-img {
   background-color: #e82953;
   margin-left: 4%;
   margin-right: 1%;
+  height: 2vh;
  }
 
  .covid-safety {
     color: black;
     /* margin-right: 4%; */
+    display: flex;
+    flex-direction: row;
     margin-bottom: 3%;
  }
  
@@ -115,4 +118,30 @@ body {
     display:grid;
     grid-template-columns: 1fr;
     }  
+   .product-headline {
+    color: #e82953;
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 2.5vh;
+  }
+  .spray-img {
+  background-color: #e82953;
+  margin-left: 4%;
+  margin-right: 1%;
+  height: 2vh;
+ }
+ .covid-safety {
+    color: black;
+    /* margin-right: 4%; */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3%;
+    margin-top: 2%;
+ }
+ .covid-guideline {
+    color: black;
+    margin-bottom: 3%;
+    font-size: 12px;
+ }
 }
