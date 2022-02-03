@@ -34,11 +34,6 @@ class LoginSignup extends React.Component {
         this.setState({
           isLoggedIn: false,
         });
-      })
-      .finally(() => {
-        this.setState({
-          isLoggedIn: false,
-        });
       });
   };
 

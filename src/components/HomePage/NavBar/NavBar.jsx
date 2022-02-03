@@ -6,9 +6,13 @@ import React from 'react';
 import './NavBar.css';
 
 class Navbar extends React.Component {
-  handleLogout = () => {
-    this.props.handleLogout();
-  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     userName: this.props.userNAme,
+  //     isLoggedIn: this.props.loginStatus,
+  //   };
+  // }
 
   handleLogout = () => {
     this.props.handleLogout();
@@ -28,14 +32,14 @@ class Navbar extends React.Component {
       });
     };
     const loginclick = () => (window.location = '/login');
-    let temp = '';
-    let logout;
-    if (this.props.loginStatus) {
-      temp = `Hello, ${this.props.userName}`;
-      logout = 'Logout';
-    } else {
-      temp = 'Log-in/Sign-up';
-    }
+    const temp = 'Log-in/Sign-up';
+    const logout = 'logout';
+    // if (this.props.loginStatus) {
+    //   temp = `Hello, ${this.props.userName}`;
+    //   logout = 'Logout';
+    // } else {
+    //   temp = 'Log-in/Sign-up';
+    // }
     return (
       <React.Fragment>
         {console.log('this.props.loginStatus', this.props.loginStatus)}
@@ -63,12 +67,24 @@ class Navbar extends React.Component {
           <div className="dropdown-nav">
             <img className="user-icon" src="/activityPics/user-login-icon.png" />
             <div className="dropdown-content">
-              <span className="box" onClick={loginclick}>
+              {/* <span className="box" onClick={loginclick}>
                 {temp}
               </span>
               <span className="box" onClick={logoutclick}>
                 {logout}
-              </span>
+              </span> */}
+              {!this.props.loginStatus ? (
+                <span className="box" onClick={loginclick}>
+                  {temp}
+                </span>
+              ) : (
+                <div>
+                  <span className="box">{`Hello, ${this.props.userName}`}</span>
+                  <span className="box" onClick={logoutclick}>
+                    {logout}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </header>
