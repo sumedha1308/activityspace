@@ -66,15 +66,16 @@ body {
   margin: 30px;
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 500px) {
     .login_form {
-    width: 320px;
-    height: 350px;
-    background: #fff;
-    border-radius: 5px;
-    border: solid 1px;
-    margin-left: 5%;
-    position: fixed;
+      margin-top: 150px;
+      width: 320px;
+      height: 350px;
+      background: #fff;
+      border-radius: 5px;
+      border: solid 1px;
+      margin-left: 5%;
+      position: relative;;
     }
     .loginEmail {
     margin: 20px;
