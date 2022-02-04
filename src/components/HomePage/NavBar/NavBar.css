@@ -10,11 +10,14 @@ body {
   text-decoration: none;
   font-size: 30px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
 }
 
 .companyLogo-icon {
-  width: 16%;
-  height: 50%;
+  width: 90%;
+  height: 80%;
 }
 .logoSpace {
   color: #e82953;
@@ -35,14 +38,6 @@ body {
   padding-top: 20px;
 }
 
-#hamburger {
-  margin-top: 14px;
-}
-
-#hamburger:active{
-  background-color:#d4d4d4;
-
-}
 
   .dropdown-content span {
     display: block;
@@ -77,16 +72,28 @@ body {
     color:#e82953;
     
   }
-
-
-  
+  .activities-dropdown {
+    margin-left: 9rem;
+    margin-right: 2rem;
+  }
+  /* .login-dropdown {
+    margin-left: 15rem;
+    margin-right: 2rem;
+  } */
+  .activities-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   .navbar {
     /*added flex wrap..change in all*/
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr;
+        grid-template-rows: 1fr;
+        /* justify-content: space-around; */
         align-items: center;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         line-height: 53px;
         background-color: white;
         position: sticky;
@@ -101,3 +108,49 @@ body {
     width: 10px
   }
 
+@media screen and (max-width: 450px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+  } 
+  .activities-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    float: left;
+  }
+  .activities-dropdown {
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+
+  .login-dropdown {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .dropdown-content span {
+    display: block;
+    text-decoration: none;
+    min-width: 110px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 40px;
+    color:#555555;
+    background-color: #f6f8fa;
+    box-shadow: 1px 2px 2px rgb(0 0 0 / 5%), -1px -1px 2px rgb(0 0 0 / 8%);
+    
+  }
+  .user-icon {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  /* padding-top: 20px; */
+}
+.dropdown-nav {
+  padding: 0.1vh;
+}
+}
