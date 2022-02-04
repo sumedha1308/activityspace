@@ -74,6 +74,7 @@ body {
     border-radius: 5px;
     border: solid 1px;
     margin-left: 5%;
+    position: fixed;
     }
     .loginEmail {
     margin: 20px;
