@@ -13,6 +13,7 @@ import Rating from './Rating/Rating.jsx';
 import RatingReviewCount from './RatingReviewCount/RatingReviewCount.jsx';
 import Button from '../Button/Button.jsx';
 import SpaceSummary from './SpaceSummary/SpaceSummary.jsx';
+import SpaceDescCovidSafety from './SpaceDescCovidRules/SpaceDescCovidSafety.jsx';
 
 const path = require('path');
 
@@ -150,6 +151,7 @@ class ActivitySpace extends React.Component {
                         avgRating={space.avgRating}
                         changeRating={() => {}}
                       />
+                      <SpaceDescCovidSafety space={space} />
                       <div className="about-space-box"></div>
                       <div className="box-2">
                         <div>
@@ -224,7 +226,6 @@ class ActivitySpace extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <p id="space-page-desc">{space.description}</p>
                 </div>
               ) : (
                 ''

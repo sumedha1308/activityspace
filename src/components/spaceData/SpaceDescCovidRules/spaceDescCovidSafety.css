@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+}
+  .descr-rules-container{
+    margin-top: 2%;
+    display:grid;
+    grid-template-columns: 2fr 2fr;
+    padding:5px;
+  }
+@media screen and (max-width: 650px) {
+  .descr-rules-container{
+    display:flex;
+    flex-direction: column;
+    padding:5px;
+  }
+}
