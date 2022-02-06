@@ -1,3 +1,23 @@
 body{
     margin: 0;
 }
+.rating-review-count {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2vw;
+    font-weight: 300;
+}
+.review-count{
+    margin-left: 5%;
+}
+@media screen and (max-width: 650px) {
+    .rating-review-count {
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .review-count{
+        margin-left: 5%;
+    }
+}

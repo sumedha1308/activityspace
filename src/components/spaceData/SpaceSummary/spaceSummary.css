@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+}
+
+.space-summary {
+    margin-top: 1%;
+}
+.review-rating-count-location{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2fr;
+}
+.space-details {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: 2fr 2fr;
+}
+.space-page-title{
+    font-size: 3vw;
+    font-weight: 300;
+}
+.space-location {
+    height: 2.5vh;
+    width: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+.space-location:hover {
+    color: #e82953;
+}
+.loc-info {
+    margin-left: 0.5px;
+    font-size: 20px;
+}
+.people-icon{
+    height: 2.5vh;
+    width: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    /* margin-left: 8%; */
+    font-weight: 300;
+    padding: 5px;
+}
+.people-icon-image{
+    padding-right: 10%;
+}
+.space-for-people-count{
+    padding-left: 7px;
+}
+.area-icon {
+    height: 2.5vh;
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8%;
+    font-weight: 300;
+    padding: 10px;
+}
+.rupees-icon {
+    height: 2.5vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8%;
+    font-weight: 300;
+    padding: 10px;
+}
+.rupees-icon-image{
+    height: 2.5vh;
+    width: 1vw;
+}
+.price-info{
+    /* margin-left: 0.5px; */
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 650px) {
+    .space-summary {
+        margin-top: 2%;
+    }
+    .space-page-title{
+        font-size: 6vw;
+        font-weight: 300;
+   }
+   .review-rating-count-location{
+        margin-top: 5%;
+        display: grid;
+        grid-template-columns: 2fr 4fr ;
+        
+     }
+   .space-details {
+         margin-top: 4%;
+         display: grid;
+         grid-template-columns: 2fr 2.5fr 2fr;
+         grid-template-rows: 3fr 3fr;
+  }
+   .space-location {
+        /* margin-top: 3%; */
+        height: 2vh;
+        width: 2vw;
+        display: flex;
+        flex-direction: row;
+    }
+    .space-location:hover {
+        color: #e82953;
+    }
+    .loc-info  {
+        /* margin: 0.5%; */
+        font-size: 15px;
+    }
+    .people-icon {
+        height: 2vh;
+        width: 2vw;
+        /* margin-left: 35%; */
+        display: flex;
+        flex-direction: row;
+        font-weight: 300;
+    }
+    .people-info {
+        /* margin: 0.5%; */
+        font-size: 15px;
+    }
+    .space-for-people-count{
+        padding-left: 7px;
+    }
+    .area-icon {
+        height: 2vh;
+        width: 25vw;
+        display: flex;
+        flex-direction: row;
+        font-weight: 300;
+        margin-left: 0px;
+    }
+    .area-info {
+        font-size: 12px;
+    }
+    .rupees-icon {
+        height: 2vh;
+        width: 25vw;
+        display: flex;
+        flex-direction: row;
+        font-weight: 300;
+        margin-left: 0px;
+    }
+.rupees-icon-image{
+    height: 2.5vh;
+    width: 3.5vw;
+}
+.price-info{
+    /* margin-left: 0.5px; */
+    font-size: 12px;
+}
+
+}

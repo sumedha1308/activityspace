@@ -12,6 +12,7 @@ import AvgRating from './avgRating/AvgRating.jsx';
 import Rating from './Rating/Rating.jsx';
 import RatingReviewCount from './RatingReviewCount/RatingReviewCount.jsx';
 import Button from '../Button/Button.jsx';
+import SpaceSummary from './SpaceSummary/SpaceSummary.jsx';
 
 const path = require('path');
 
@@ -139,63 +140,35 @@ class ActivitySpace extends React.Component {
             />
             <div className="space-outer-box">
               {Object.keys(space).length !== 0 ? (
-                <div>
-                  <div>
-                    <div className="space-detail-box">
-                      <SpaceImage space={space} />
-                      <div className="box-1">
-                        <div className="about-space-box">
-                          <div>
-                            <p id="space-page-title">{space.title}</p>
-                            <p id="space-page-author">by-{space.author}</p>
-                          </div>
-                        </div>
-                        <div className="box-2">
-                          <div>
+                <div className="space-container">
+                  <div className="space-detail-box">
+                    <SpaceImage space={space} />
+                    <div className="about-space-rating-box">
+                      <SpaceSummary
+                        space={space}
+                        isLoggedIn={this.state.isLoggedIn}
+                        avgRating={space.avgRating}
+                        changeRating={() => {}}
+                      />
+                      <div className="about-space-box"></div>
+                      <div className="box-2">
+                        <div>
+                          <div className="space-page-user-review">
                             <div>
-                              <AvgRating
-                                isLoggedIn={this.state.isLoggedIn}
-                                avgRating={space.avgRating}
-                                changeRating={() => {}}
-                              />
-                              <RatingReviewCount space={space} />
-                            </div>
-                            <div className="space-page-user-review">
-                              <div>
-                                {this.state.isLoggedIn ? (
-                                  space.userReview !== undefined ? (
-                                    !this.state.isEdit ? (
+                              {this.state.isLoggedIn ? (
+                                space.userReview !== undefined ? (
+                                  !this.state.isEdit ? (
+                                    <div>
+                                      <Rating
+                                        loginStatus={this.state.isLoggedIn}
+                                        rating={space.userReview.rating}
+                                        changeRating={() => {}}
+                                      />
                                       <div>
-                                        <Rating
-                                          loginStatus={this.state.isLoggedIn}
-                                          rating={space.userReview.rating}
-                                          changeRating={() => {}}
-                                        />
-                                        <div>
-                                          <div className="user-review-box">{space.userReview.review}</div>
-                                        </div>
-                                        <Button onClick={this.handleEdit} buttonValue={'Edit'} />
+                                        <div className="user-review-box">{space.userReview.review}</div>
                                       </div>
-                                    ) : (
-                                      <div>
-                                        <Rating
-                                          loginStatus={this.state.isLoggedIn}
-                                          rating={this.state.newRating}
-                                          changeRating={this.changeRating}
-                                        />
-                                        <div>
-                                          <textarea
-                                            className="user-review-box"
-                                            name="newReview"
-                                            value={this.state.newReview}
-                                            onChange={this.handleChange}
-                                            placeholder="Write your review here"
-                                          ></textarea>
-                                        </div>
-                                        <Button onClick={this.handleSubmitReview} buttonValue={'Done'} />
-                                        <Button onClick={this.handleEditCancel} buttonValue={'Cancel'} />
-                                      </div>
-                                    )
+                                      <Button onClick={this.handleEdit} buttonValue={'Edit'} />
+                                    </div>
                                   ) : (
                                     <div>
                                       <Rating
@@ -212,27 +185,46 @@ class ActivitySpace extends React.Component {
                                           placeholder="Write your review here"
                                         ></textarea>
                                       </div>
-                                      <Button onClick={this.handleSubmitReview} buttonValue={'Submit'} />
+                                      <Button onClick={this.handleSubmitReview} buttonValue={'Done'} />
+                                      <Button onClick={this.handleEditCancel} buttonValue={'Cancel'} />
                                     </div>
                                   )
                                 ) : (
                                   <div>
+                                    <Rating
+                                      loginStatus={this.state.isLoggedIn}
+                                      rating={this.state.newRating}
+                                      changeRating={this.changeRating}
+                                    />
                                     <div>
-                                      <a href="/login">
-                                        {/* <button className="login-btn">Login to Review</button> */}
-                                        <Button style={{ width: '10px' }} buttonValue={'Login to Review'} />
-                                      </a>
+                                      <textarea
+                                        className="user-review-box"
+                                        name="newReview"
+                                        value={this.state.newReview}
+                                        onChange={this.handleChange}
+                                        placeholder="Write your review here"
+                                      ></textarea>
                                     </div>
+                                    <Button onClick={this.handleSubmitReview} buttonValue={'Submit'} />
                                   </div>
-                                )}
-                              </div>
+                                )
+                              ) : (
+                                <div>
+                                  <div>
+                                    <a href="/login">
+                                      {/* <button className="login-btn">Login to Review</button> */}
+                                      <Button style={{ width: '10px' }} buttonValue={'Login to Review'} />
+                                    </a>
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <p id="space-page-desc">{space.description}</p>
                   </div>
+                  <p id="space-page-desc">{space.description}</p>
                 </div>
               ) : (
                 ''

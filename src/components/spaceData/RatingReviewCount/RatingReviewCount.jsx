@@ -5,9 +5,9 @@ import './ratingReviewCount.css';
 const path = require('path');
 
 const RatingReviewCount = ({ space }) => (
-  <div>
-    <div>{space.ratingCount} Ratings</div>
-    <div>{space.reviewCount} Reviews</div>
+  <div className="rating-review-count">
+    <div className="rating-count">{space.ratingCount} Ratings</div>
+    <div className="review-count">{space.reviewCount} Reviews</div>
   </div>
 );
 

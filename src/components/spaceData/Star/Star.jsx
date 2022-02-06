@@ -1,4 +1,5 @@
 import React from 'react';
+import './star.css';
 
 class Star extends React.Component {
   changeRating = (e) => {
@@ -6,13 +7,25 @@ class Star extends React.Component {
   };
 
   filledStarElement = (index) => (
-    <div style={{ display: 'inline-block', color: 'orange' }} key={index} id={index} onClick={this.changeRating}>
+    <div
+      className="filled-stars"
+      style={{ display: 'inline-block', color: 'orange' }}
+      key={index}
+      id={index}
+      onClick={this.changeRating}
+    >
       &#9733;
     </div>
   );
 
   emptyStarElement = (index) => (
-    <div style={{ display: 'inline-block', color: 'grey' }} key={index} id={index} onClick={this.changeRating}>
+    <div
+      className="empty-stars"
+      style={{ display: 'inline-block', color: 'grey' }}
+      key={index}
+      id={index}
+      onClick={this.changeRating}
+    >
       &#9733;
     </div>
   );
