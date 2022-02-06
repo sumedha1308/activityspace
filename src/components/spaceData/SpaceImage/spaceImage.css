@@ -1,0 +1,8 @@
+body{
+    margin: 0;
+}
+
+.space-page-thumbnail-box{
+    padding: 10px;
+    border: 1px solid rgb(195, 195, 195);
+}

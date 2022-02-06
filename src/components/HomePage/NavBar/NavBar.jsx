@@ -11,7 +11,7 @@ class Navbar extends React.Component {
   };
 
   render() {
-    const activitiesClick = (activity) => (window.location = `/api/activities/${encodeURIComponent(activity)}`);
+    const activitiesClick = (activity) => (window.location = `/activities/${encodeURIComponent(activity)}`);
     const logoClick = () => (window.location = `/`);
     const logoutclick = () => {
       localStorage.clear();
@@ -32,7 +32,7 @@ class Navbar extends React.Component {
         <header className="navbar">
           <div className="companyLogo" onClick={logoClick}>
             <div>
-              <img className="companyLogo-icon" src="Logo-Full.jpg" />
+              <img className="companyLogo-icon" src={`${process.env.PUBLIC_URL} /Logo-Full.jpg`} />
             </div>
             <span className="logoSpace">Activity</span>Space
           </div>

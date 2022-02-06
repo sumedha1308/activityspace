@@ -16,7 +16,9 @@ router.post('/', (req, res) => {
   }
 
   const { userName, email, password } = req.body;
-
+  // username validation
+  // email validation
+  // password validation
   if (!email) {
     res.status(400).send({ error: 'Email not present in request' });
     return;
@@ -30,7 +32,7 @@ router.post('/', (req, res) => {
     res.status(400).send({ error: 'userName not present in request' });
     return;
   }
-
+  // 4.To find user in usercredentials
   UserCredential.findOne({ email })
     .then((user) => {
       if (user) {
@@ -44,7 +46,7 @@ router.post('/', (req, res) => {
         // eslint-disable-next-line consistent-return
         return res.status(500).send({ error: 'Some unknown error occured' });
       }
-
+      // 5.user add into user credentials()
       const userCredential = new UserCredential({ userName, email, password: hash });
 
       userCredential.save().then(() => {
