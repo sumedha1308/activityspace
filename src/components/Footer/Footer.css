@@ -1,12 +1,82 @@
 .footer {
-  background-color: #e82953;
-  height: 80px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12%;
-  font-size: 24px;
-  color: black;
-  font-family: 'Nunito Sans', sans-serif;
+    background-color: #e82953;
+    height: 80px;
+    width: 100%;
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: 2fr 12fr;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12%;
+    font-size: 24px;
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.footer-line {
+  margin-left: 25%;
+}
+.contact-details-container {
+  margin-left: 25%;
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr;
+}
+.contact-details {
+  font-size:10px;
+  width: 5px;
+  height: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.linkedin-img {
+  width: 20px;
+  height: 20px;
+  font-size:2px;
+}
+.github-img{
+  width: 20px;
+  height: 20px;
+  font-size:2px;
+  color:white;
+  /* background-color: white; */
+}
+@media screen and (max-width: 650px) {
+  .footer {
+    background-color: #e82953;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    font-size: 20px;
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+    flex-direction: column;
+}
+.contact-details-container {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  margin-bottom: 7%;
+  margin-left: 0.1%;
+}
+.contact-details {
+  font-size:10px;
+  width: 5px;
+  height: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.linkedin-img {
+  width: 20px;
+  height: 20px;
+  font-size:2px;
+}
+.github-img{
+  width: 20px;
+  height: 20px;
+  font-size:2px;
+  color:white;
+}
+.footer-line {
+  margin-left: 0px;
+}
 }

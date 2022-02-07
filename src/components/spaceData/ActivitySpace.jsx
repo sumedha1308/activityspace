@@ -8,17 +8,14 @@ import Navbar from '../HomePage/NavBar/NavBar.jsx';
 import './activitySpace.css';
 import Star from './Star/Star.jsx';
 import SpaceImage from './SpaceImage/SpaceImage.jsx';
-import AvgRating from './avgRating/AvgRating.jsx';
 import Rating from './Rating/Rating.jsx';
-import RatingReviewCount from './RatingReviewCount/RatingReviewCount.jsx';
 import Button from '../Button/Button.jsx';
 import SpaceSummary from './SpaceSummary/SpaceSummary.jsx';
 import SpaceDescCovidSafety from './SpaceDescCovidRules/SpaceDescCovidSafety.jsx';
 import SubmitReview from './SubmitReview/SubmitReview.jsx';
 import EditReviewRating from './EditReviewRating/EditReviewRating.jsx';
 import Review from './Review/Review.jsx';
-
-const path = require('path');
+import Footer from '../Footer/Footer.jsx';
 
 class ActivitySpace extends React.Component {
   constructor(props) {
@@ -231,6 +228,7 @@ class ActivitySpace extends React.Component {
                 ''
               )}
             </div>
+            <Footer />
           </div>
         )}
       </React.Fragment>
