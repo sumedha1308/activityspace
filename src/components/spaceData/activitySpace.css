@@ -9,7 +9,21 @@ body{
     margin-right: 10%;
     font-size: 1.2vw;
 }
-
+.done-cancel-buttons {
+    display: flex;
+    flex-direction: row;
+}
+.done-cancel-button-margin {
+    /* margin-left: 5%; */
+    margin-right: 5%;
+    margin-top: 1%;
+}
 @media screen and (max-width: 650px) {
-    
+    .done-cancel-buttons {
+        display: flex;
+        flex-direction: row;
+    }
+    .done-cancel-button-margin {
+        margin: 5%;
+    }
 }

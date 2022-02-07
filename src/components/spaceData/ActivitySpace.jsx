@@ -15,6 +15,8 @@ import Button from '../Button/Button.jsx';
 import SpaceSummary from './SpaceSummary/SpaceSummary.jsx';
 import SpaceDescCovidSafety from './SpaceDescCovidRules/SpaceDescCovidSafety.jsx';
 import SubmitReview from './SubmitReview/SubmitReview.jsx';
+import EditReviewRating from './EditReviewRating/EditReviewRating.jsx';
+import Review from './Review/Review.jsx';
 
 const path = require('path');
 
@@ -134,7 +136,7 @@ class ActivitySpace extends React.Component {
         {!this.state.isLoaded ? (
           ''
         ) : (
-          <div>
+          <div className="space-page-container">
             <Navbar
               loginStatus={this.state.isLoggedIn}
               handleLogout={this.handleLogout}
@@ -142,80 +144,64 @@ class ActivitySpace extends React.Component {
             />
             <div className="space-outer-box">
               {Object.keys(space).length !== 0 ? (
-                <div className="space-container">
-                  <div className="space-detail-box">
-                    <SpaceImage space={space} />
-                    <div className="about-space-rating-box">
-                      <SpaceSummary
-                        space={space}
-                        isLoggedIn={this.state.isLoggedIn}
-                        avgRating={space.avgRating}
-                        changeRating={() => {}}
-                      />
-                      <SpaceDescCovidSafety space={space} />
-                      <div className="box-2">
-                        <div>
-                          <div className="space-page-user-review">
-                            <div>
-                              {this.state.isLoggedIn ? (
-                                space.userReview !== undefined ? (
-                                  !this.state.isEdit ? (
-                                    <div>
-                                      <Rating
-                                        loginStatus={this.state.isLoggedIn}
-                                        rating={space.userReview.rating}
-                                        changeRating={() => {}}
-                                      />
-                                      <div>
-                                        <div className="user-review-box">{space.userReview.review}</div>
-                                      </div>
-                                      <Button onClick={this.handleEdit} buttonValue={'Edit'} />
-                                    </div>
-                                  ) : (
-                                    <div>
-                                      <Rating
-                                        loginStatus={this.state.isLoggedIn}
-                                        rating={this.state.newRating}
-                                        changeRating={this.changeRating}
-                                      />
-                                      <div>
-                                        <textarea
-                                          className="user-review-box"
-                                          name="newReview"
-                                          value={this.state.newReview}
-                                          onChange={this.handleChange}
-                                          placeholder="Write your review here"
-                                        ></textarea>
-                                      </div>
-                                      <Button onClick={this.handleSubmitReview} buttonValue={'Done'} />
-                                      <Button onClick={this.handleEditCancel} buttonValue={'Cancel'} />
-                                    </div>
-                                  )
-                                ) : (
-                                  <SubmitReview
-                                    loginStatus={this.state.isLoggedIn}
-                                    rating={this.state.newRating}
-                                    changeRating={this.changeRating}
-                                    value={this.state.newReview}
-                                    onChange={this.handleChange}
-                                    onClick={this.handleSubmitReview}
-                                    buttonValue={'Submit'}
-                                  />
-                                )
-                              ) : (
-                                <div>
-                                  <div>
-                                    <a href="/login">
-                                      {/* <button className="login-btn">Login to Review</button> */}
-                                      <Button style={{ width: '10px' }} buttonValue={'Login to Review'} />
-                                    </a>
-                                  </div>
+                <div className="space-detail-box">
+                  <SpaceImage space={space} />
+                  <div className="about-space-rating-box">
+                    <SpaceSummary
+                      space={space}
+                      isLoggedIn={this.state.isLoggedIn}
+                      avgRating={space.avgRating}
+                      changeRating={() => {}}
+                    />
+                    <SpaceDescCovidSafety space={space} />
+                    <div className="space-page-user-review">
+                      {this.state.isLoggedIn ? (
+                        space.userReview !== undefined ? (
+                          !this.state.isEdit ? (
+                            <EditReviewRating
+                              loginStatus={this.state.isLoggedIn}
+                              rating={space.userReview.rating}
+                              changeRating={() => {}}
+                              onClick={this.handleEdit}
+                              buttonValue={'Edit'}
+                              space={space}
+                            />
+                          ) : (
+                            <div className="rating-review-sone-cancel">
+                              <Rating
+                                loginStatus={this.state.isLoggedIn}
+                                rating={this.state.newRating}
+                                changeRating={this.changeRating}
+                              />
+                              <Review value={this.state.newReview} onChange={this.handleChange} />
+                              <div className="done-cancel-buttons">
+                                <div className="done-cancel-button-margin">
+                                  <Button onClick={this.handleSubmitReview} buttonValue={'Done'} />
                                 </div>
-                              )}
+                                <div className="done-cancel-button-margin">
+                                  <Button onClick={this.handleEditCancel} buttonValue={'Cancel'} />
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          )
+                        ) : (
+                          <SubmitReview
+                            loginStatus={this.state.isLoggedIn}
+                            rating={this.state.newRating}
+                            changeRating={this.changeRating}
+                            value={this.state.newReview}
+                            onChange={this.handleChange}
+                            onClick={this.handleSubmitReview}
+                            buttonValue={'Submit'}
+                          />
+                        )
+                      ) : (
+                        <div>
+                          <a href="/login">
+                            <Button style={{ width: '10px' }} buttonValue={'Login to Review'} />
+                          </a>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>
