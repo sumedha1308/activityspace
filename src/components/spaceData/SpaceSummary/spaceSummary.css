@@ -128,7 +128,7 @@ body{
     }
     .area-icon {
         height: 2vh;
-        width: 25vw;
+        width: 27vw;
         display: flex;
         flex-direction: row;
         font-weight: 300;
@@ -139,19 +139,19 @@ body{
     }
     .rupees-icon {
         height: 2vh;
-        width: 25vw;
+        width: 35vw;
         display: flex;
         flex-direction: row;
         font-weight: 300;
         margin-left: 0px;
     }
-.rupees-icon-image{
-    height: 2.5vh;
-    width: 3.5vw;
-}
-.price-info{
-    /* margin-left: 0.5px; */
-    font-size: 12px;
-}
+    .rupees-icon-image{
+        height: 2.5vh;
+        width: 3.5vw;
+    }
+    .price-info{
+        /* margin-left: 0.5px; */
+        font-size: 12px;
+    }
 
 }

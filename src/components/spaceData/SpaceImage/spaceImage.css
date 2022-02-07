@@ -2,22 +2,18 @@ body{
     margin: 0;
 }
 
-.space-page-thumbnail-box{
-    padding: 10px;
-    border: 1px solid rgb(225, 225, 225);
-}
-.space-page-thumbnail{
-    width: 77vw;
-    height: 62vh;
+.user-review-box {
+    width: 95%;
+    height: 60px;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 @media screen and (max-width: 650px) {
-    .space-page-thumbnail-box{
-        padding: 5px;
-        border: 2px solid rgb(195, 195, 195);
+    .user-review-box {
+        width: 95%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        height: 60px;
     }
-.space-page-thumbnail{
-        width: 75vw;
-        height: 40vh;
-   }
 }

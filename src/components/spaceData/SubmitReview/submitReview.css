@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+}
+
+.space-page-thumbnail-box{
+    padding: 10px;
+    border: 1px solid rgb(225, 225, 225);
+}
+.space-page-thumbnail{
+    width: 77vw;
+    height: 62vh;
+}
+
+@media screen and (max-width: 650px) {
+    .space-page-thumbnail-box{
+        padding: 5px;
+        border: 2px solid rgb(195, 195, 195);
+    }
+.space-page-thumbnail{
+        width: 72vw;
+        height: 40vh;
+   }
+}

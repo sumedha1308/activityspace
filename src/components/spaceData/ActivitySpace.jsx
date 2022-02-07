@@ -14,6 +14,7 @@ import RatingReviewCount from './RatingReviewCount/RatingReviewCount.jsx';
 import Button from '../Button/Button.jsx';
 import SpaceSummary from './SpaceSummary/SpaceSummary.jsx';
 import SpaceDescCovidSafety from './SpaceDescCovidRules/SpaceDescCovidSafety.jsx';
+import SubmitReview from './SubmitReview/SubmitReview.jsx';
 
 const path = require('path');
 
@@ -152,7 +153,6 @@ class ActivitySpace extends React.Component {
                         changeRating={() => {}}
                       />
                       <SpaceDescCovidSafety space={space} />
-                      <div className="about-space-box"></div>
                       <div className="box-2">
                         <div>
                           <div className="space-page-user-review">
@@ -192,23 +192,15 @@ class ActivitySpace extends React.Component {
                                     </div>
                                   )
                                 ) : (
-                                  <div>
-                                    <Rating
-                                      loginStatus={this.state.isLoggedIn}
-                                      rating={this.state.newRating}
-                                      changeRating={this.changeRating}
-                                    />
-                                    <div>
-                                      <textarea
-                                        className="user-review-box"
-                                        name="newReview"
-                                        value={this.state.newReview}
-                                        onChange={this.handleChange}
-                                        placeholder="Write your review here"
-                                      ></textarea>
-                                    </div>
-                                    <Button onClick={this.handleSubmitReview} buttonValue={'Submit'} />
-                                  </div>
+                                  <SubmitReview
+                                    loginStatus={this.state.isLoggedIn}
+                                    rating={this.state.newRating}
+                                    changeRating={this.changeRating}
+                                    value={this.state.newReview}
+                                    onChange={this.handleChange}
+                                    onClick={this.handleSubmitReview}
+                                    buttonValue={'Submit'}
+                                  />
                                 )
                               ) : (
                                 <div>
