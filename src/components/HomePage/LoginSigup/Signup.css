@@ -4,7 +4,16 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   margin: 0;
 }
-
+.signup_tagline {
+  margin-top:5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #e82953;
+  font-size: 25px;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 20%;
+}
 .signupformBtn {
   background-color: #e82953;
   color: #fff;
@@ -24,12 +33,9 @@ body {
 
 .signup_div {
   position: absolute;
-
   width: 300px;
   height: 300px;
-
-  /* Center form on page horizontally & vertically */
-  top: 50%;
+  top: 55%;
   left: 50%;
   margin-top: -150px;
   margin-left: -177px;
@@ -66,6 +72,16 @@ body {
 }
 
 @media screen and (max-width: 675px) {
+  .signup_tagline {
+    margin-top:15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #e82953;
+    font-size: 25px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 20%;
+}
 .signup_form {
     width: 320px;
     height: 300px;
@@ -73,7 +89,7 @@ body {
     border-radius: 5px;
     border: solid 1px;
     margin-left: 5%;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 .signup_div {
     position: relative;
@@ -81,7 +97,7 @@ body {
     height: 300px;
     top: 50%;
     left: 50%;
-    margin-top: 150px;
+    margin-top: 10px;
     margin-left: -177px;
 }
 }
