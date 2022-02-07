@@ -19,6 +19,9 @@ const reviewSchema = new Schema({
   review: {
     type: String,
   },
+  userName: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now,

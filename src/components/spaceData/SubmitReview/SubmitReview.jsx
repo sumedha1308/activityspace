@@ -7,7 +7,7 @@ import Rating from '../Rating/Rating.jsx';
 const SubmitReview = (props) => (
   <div>
     <Rating loginStatus={props.loginStatus} rating={props.rating} changeRating={props.changeRating} />
-    <div>
+    <div className="submit-review-textArea">
       <textarea
         className="user-review-box"
         name="newReview"

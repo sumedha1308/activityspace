@@ -19,20 +19,27 @@ router.post('/', (req, res, next) => {
   }
 
   const { userId } = req.session;
+  // const { userName } = req.session.userName;
+  // eslint-disable-next-line no-console
+  // console.log('userId', userId);
 
-  let { newRating, newReview, activityId } = req.body;
+  let { newRating, newReview, activityId, userName } = req.body;
 
   if (newReview === undefined) {
     newReview = '';
   }
 
-  if (!newRating || !activityId || !userId) {
+  if (!newRating || !activityId || !userId || !userName) {
     res.status(400).send({ error: 'Information incomplete' });
     return;
   }
 
   Promise.all([
-    Review.findOneAndUpdate({ activityId, userId }, { rating: newRating, review: newReview }, { upsert: true }),
+    Review.findOneAndUpdate(
+      { activityId, userId },
+      { rating: newRating, review: newReview, userName },
+      { upsert: true },
+    ),
     Activity.findOne({ activityId }),
   ])
     // eslint-disable-next-line consistent-return

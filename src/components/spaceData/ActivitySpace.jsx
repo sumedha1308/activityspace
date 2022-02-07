@@ -42,8 +42,8 @@ class ActivitySpace extends React.Component {
 
     Promise.all([promise1, promise3])
       .then((responses) => {
-        console.log('responses[0].data.activityData', responses[0].data.activityData);
-        console.log('responses[1].data.reviewList', responses[1].data.reviewList);
+        // console.log('responses[0].data.activityData', responses[0].data.activityData);
+        // console.log('responses[1].data.reviewList', responses[1].data.reviewList);
         this.setState({
           spaceData: responses[0].data.activityData,
           spaceReviews: responses[1].data.reviewList,
@@ -59,6 +59,7 @@ class ActivitySpace extends React.Component {
           isLoggedIn: true,
           isLoaded: true,
           userName: response.data.userName,
+          // spaceReviews: this.state.spaceReviews.push(this.state.userName),
         });
       })
       .catch((error) => {
@@ -76,10 +77,11 @@ class ActivitySpace extends React.Component {
 
   handleSubmitReview = () => {
     axios
-      .post('/api/reviews/  ', {
+      .post('/api/reviews/', {
         newRating: this.state.newRating,
         newReview: this.state.newReview,
         activityId: this.props.match.params.activityId,
+        userName: this.state.userName,
       })
       .then((response) => {
         this.getData();
@@ -129,7 +131,7 @@ class ActivitySpace extends React.Component {
   };
 
   render() {
-    console.log('this.state.spaceData', this.state.spaceData);
+    // console.log('this.state.spaceData', this.state.spaceData);
     const space = this.state.spaceData;
     return (
       <React.Fragment>
@@ -204,6 +206,26 @@ class ActivitySpace extends React.Component {
                       )}
                     </div>
                   </div>
+                </div>
+              ) : (
+                ''
+              )}
+              {this.state.spaceReviews.length !== 0 ? (
+                <div className="all-reviews">
+                  {this.state.spaceReviews.map((review) => {
+                    if (space.userReview === undefined || review._id !== space.userReview._id) {
+                      return (
+                        <div key={review._id} className="space-review">
+                          {/* {console.log('spaceReviews', review)} */}
+                          <div className="all-userName-review">User Name : {review.userName}</div>
+                          <Star rating={review.rating} changeRating={() => {}} />
+                          {review.review !== '' ? <div className="all-userName-review">{review.review}</div> : ''}
+                          <hr />
+                        </div>
+                      );
+                    }
+                    return '';
+                  })}
                 </div>
               ) : (
                 ''

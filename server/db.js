@@ -20,6 +20,7 @@ const connect = (dbConfig) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     });
   } catch (err) {
     console.log(`Error connecting to MongoDB: ${err}`);
