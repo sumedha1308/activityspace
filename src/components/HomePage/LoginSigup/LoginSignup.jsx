@@ -122,7 +122,8 @@ class LoginSignup extends React.Component {
                 <div className="loginEmail">
                   Username:{' '}
                   <input
-                    placeholder="userName"
+                    placeholder="username"
+                    className="usernameInput"
                     name="userName"
                     type="text"
                     onChange={this.handleChange}
@@ -133,6 +134,7 @@ class LoginSignup extends React.Component {
                   Email:{' '}
                   <input
                     placeholder="email"
+                    className="usernameInput"
                     name="email"
                     type="email"
                     onChange={this.handleChange}
@@ -144,6 +146,7 @@ class LoginSignup extends React.Component {
                   Password:{' '}
                   <input
                     placeholder="password"
+                    className="usernameInput"
                     name="password"
                     type="password"
                     onChange={this.handleChange}
