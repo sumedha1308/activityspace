@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './HomePage/HomePage.jsx';
 import LoginSignup from './HomePage/LoginSigup/LoginSignup.jsx';
 import SignUp from './HomePage/LoginSigup/SignUp.jsx';
-import Profile from './HomePage/LoginSigup/Profile.jsx';
+import ActivitySpace from './spaceData/ActivitySpace.jsx';
 
 class AppRouter extends React.Component {
   render() {
@@ -16,9 +16,8 @@ class AppRouter extends React.Component {
           <Route path="/home" component={HomePage} />
           <Route exact path="/login" component={LoginSignup} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/activities/:activityId" component={ActivitySpace} />
         </Switch>
-        {/* <Footer /> */}
       </Router>
     );
   }

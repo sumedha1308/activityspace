@@ -50,7 +50,7 @@ const activitySchema = new Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   amenities: {

@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+  .descr-rules-container{
+    margin-top: 2%;
+    display:grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    margin-bottom: 2%;
+  }
+@media screen and (max-width: 650px) {
+  .descr-rules-container{
+    display:flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}

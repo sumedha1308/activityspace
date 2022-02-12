@@ -115,6 +115,10 @@ class SignUp extends React.Component {
         <div>
           <div style={{ minHeight: 'calc(100vh - 31px)' }}>
             <NavBar loginStatus={this.state.isLoggedIn} handleLogout={this.handleLogout} />
+            <div className="signup_tagline">
+              Get bored with covid? Want to celebrate your event? You are in right place to find a good place for good
+              moments. Please signup to make your memories priceless.
+            </div>
             <div className="signup_div">
               <form className="signup_form">
                 <div className="signupFname">

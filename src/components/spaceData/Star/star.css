@@ -1,0 +1,14 @@
+.filled-stars{
+    font-size: 25px;
+}
+.empty-stars{
+    font-size: 25px;
+}
+@media screen and (max-width: 650px) {
+    .filled-stars{
+        font-size: 15px;
+    }
+    .empty-stars{
+        font-size: 15px;
+    }
+}

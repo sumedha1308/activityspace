@@ -113,12 +113,17 @@ class LoginSignup extends React.Component {
         <div>
           <div style={{ minHeight: 'calc(100vh - 31px)' }}>
             <NavBar loginStatus={this.state.isLoggedIn} handleLogout={this.handleLogout} />
+            <div className="signup_tagline">
+              Get bored with covid? Want to celebrate your event? You are in right place to find a good place for good
+              moments. Please Login to make your activities as beautiful as you are !!!
+            </div>
             <div className="login_div">
               <form className="login_form">
                 <div className="loginEmail">
-                  UserName:{' '}
+                  Username:{' '}
                   <input
-                    placeholder="userName"
+                    placeholder="username"
+                    className="usernameInput"
                     name="userName"
                     type="text"
                     onChange={this.handleChange}
@@ -129,6 +134,7 @@ class LoginSignup extends React.Component {
                   Email:{' '}
                   <input
                     placeholder="email"
+                    className="usernameInput"
                     name="email"
                     type="email"
                     onChange={this.handleChange}
@@ -140,16 +146,15 @@ class LoginSignup extends React.Component {
                   Password:{' '}
                   <input
                     placeholder="password"
+                    className="usernameInput"
                     name="password"
                     type="password"
                     onChange={this.handleChange}
                     value={this.state.password}
                   ></input>
                 </div>
-
                 <div>
                   <input className="loginBtn" type="submit" onClick={this.onLoginClick} value="Login"></input>
-
                   <input className="signupBtn" type="submit" onClick={this.onSignupClick} value="SignUp"></input>
                 </div>
                 {this.state.error !== null ? (
@@ -163,7 +168,6 @@ class LoginSignup extends React.Component {
               </form>
             </div>
           </div>
-          <Footer />
         </div>
       </React.Fragment>
     );

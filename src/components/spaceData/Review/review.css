@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.user-review-box {
+    width:95%;
+    height: 35px;
+}
+
+@media screen and (max-width: 650px) {
+    .user-review-box{
+        width:95%;
+        height: 35px;
+    }
+}

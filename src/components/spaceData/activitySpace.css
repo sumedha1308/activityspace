@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+
+.space-outer-box{
+    width: 80%;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.2vw;
+}
+.done-cancel-buttons {
+    display: flex;
+    flex-direction: row;
+}
+.done-cancel-button-margin {
+    /* margin-left: 5%; */
+    margin-right: 5%;
+    margin-top: 1%;
+}
+.all-reviews {
+    margin-top: 2%;
+}
+.all-userName-review {
+    font-size: 15px;
+}
+@media screen and (max-width: 650px) {
+    .done-cancel-buttons {
+        display: flex;
+        flex-direction: row;
+    }
+    .done-cancel-button-margin {
+        margin: 5%;
+    }
+    .all-userName-review {
+        font-size: 15px;
+    }
+    .all-reviews {
+        margin-top: 3%;
+    }
+}
