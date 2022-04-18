@@ -5,7 +5,6 @@
 /* eslint-disable camelcase */
 const express = require('express');
 const Razorpay = require('razorpay');
-// const crypto = require('crypto');
 
 const dotenv = require('dotenv');
 const auth = require('../middlewares/auth');
@@ -23,34 +22,18 @@ const rzpInstance = new Razorpay({
   key_secret: secret,
 });
 
-function getDate(str) {
-  const arr = str.split(/\s+/);
-  const dateStr = `${arr[2]}-${arr[1]}-${arr[3]}`;
-  return dateStr;
-}
-
-function getTime(str) {
-  const arr = str.split(/\s+/);
-  const timeStr = arr[4];
-  return timeStr;
-}
-
-function getExactTime(str) {
-  const arr = str.split(':');
-  return arr[0];
-}
-
 // create new order
-router.post('/', (req, res, ) => {
+router.post('/', (req, res) => {
   const { activityId, email, userName, price, dateStr, startTimeStr, endTimeStr } = req.body;
-  const day = getDate(dateStr);
-  const startTime = getTime(startTimeStr);
-  const exactStartTime = getExactTime(startTime);
-  const endTime = getTime(endTimeStr);
-  const exactEndTime = getExactTime(endTime);
-  const totalHrs = exactEndTime - exactStartTime;
-  const amount = price * totalHrs;
-  console.log('amount', amount);
+
+  // console.log('changing endTimeStr str date to date ', new Date(endTimeStr).getHours());
+
+  const day = new Date(dateStr).toDateString();
+  console.log('day ', day);
+  const startTime = new Date(startTimeStr).getHours();
+  const endTime = new Date(endTimeStr).getHours();
+  const totalHrs = endTime - startTime;
+  const amount = price * totalHrs * 100;
   const order = new Order({
     activityId,
     email,
@@ -62,10 +45,9 @@ router.post('/', (req, res, ) => {
     amount,
     status: 'Active',
   });
-  // console.log('before order save');
   order.save().then(
     () => {
-      // console.log('into then');
+      console.log('into then');
       const orderId = order.id;
       const options = {
         amount,
@@ -78,7 +60,7 @@ router.post('/', (req, res, ) => {
           res.status(500).send({ error: 'Error in creating razorpay order' });
           return;
         }
-      
+        console.log('amount in backend', amount);
         res.status(201).send({
           amount,
           currency,
@@ -123,27 +105,25 @@ router.put('/:id', auth.authenticate, (req, res) => {
 });
 
 // get orders
-router.get('/', auth.authenticate, (req, res)=>{
-
-    Order.find({ userId : req.session.userId, status: 'Completed'})
-    .then((orders)=>{
-        res.status(200).send({ orders })
+router.get('/', auth.authenticate, (req, res) => {
+  Order.find({ userId: req.session.userId, status: 'Completed' })
+    .then((orders) => {
+      res.status(200).send({ orders });
     })
-    .catch(()=>{
-        res.status(500).send({error: 'internal server error'})
-    })
-})
+    .catch(() => {
+      res.status(500).send({ error: 'internal server error' });
+    });
+});
 
 // get one order
-router.get('/:orderId', auth.authenticate, (req, res)=>{
-
-    const id = req.params.orderId;
-    Order.findById(id)
+router.get('/:orderId', auth.authenticate, (req, res) => {
+  const id = req.params.orderId;
+  Order.findById(id)
     .then((order) => {
-        res.status(200).send({orderData: order});
+      res.status(200).send({ orderData: order });
     })
-    .catch(()=>{
-        res.status(500).send({error: 'internal server error'});
+    .catch(() => {
+      res.status(500).send({ error: 'internal server error' });
     });
-})
+});
 module.exports = router;

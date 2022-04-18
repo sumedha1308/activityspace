@@ -7,7 +7,6 @@ import Footer from '../Footer/Footer.jsx';
 import NavBar from './NavBar/NavBar.jsx';
 import Banner from './Banner/Banner.jsx';
 import Space from './Spaces/spaces.jsx';
-import DateTime from './DateTime/DateTime.jsx';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -63,7 +62,6 @@ class HomePage extends React.Component {
           <NavBar loginStatus={this.state.isLoggedIn} handleLogout={this.handleLogout} userName={this.state.userName} />
           <Banner />
           <Space />
-          <DateTime />
         </div>
         <Footer />
       </div>
