@@ -1,0 +1,42 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+@media screen and (min-width: 650px) {
+  .date-time-pic{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+  }
+  .date-time-class{
+    padding-right: 30px;
+  }
+  #amount-to-pay{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-right: 20px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .date-time-pic {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  
+  .date-time-class {
+    padding-right: 30px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+  }
+  #amount-to-pay {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-right: 20px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}

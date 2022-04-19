@@ -16,6 +16,7 @@ import SubmitReview from './SubmitReview/SubmitReview.jsx';
 import EditReviewRating from './EditReviewRating/EditReviewRating.jsx';
 import Review from './Review/Review.jsx';
 import Footer from '../Footer/Footer.jsx';
+import DateTime from './DateTime/DateTime.jsx';
 
 class ActivitySpace extends React.Component {
   constructor(props) {
@@ -29,6 +30,9 @@ class ActivitySpace extends React.Component {
       isEdit: false,
       isLoaded: false,
       userName: 'unknown',
+      price: '',
+      email: '',
+      activityID: '',
     };
   }
 
@@ -39,12 +43,17 @@ class ActivitySpace extends React.Component {
 
     Promise.all([promise1, promise3])
       .then((responses) => {
-        // console.log('responses[0].data.activityData', responses[0].data.activityData);
+        // console.log('activityID', this.props.match.params.activityId);
+        console.log('params', this.props.match.params);
         // console.log('responses[1].data.reviewList', responses[1].data.reviewList);
         this.setState({
           spaceData: responses[0].data.activityData,
           spaceReviews: responses[1].data.reviewList,
+          price: responses[0].data.activityData.price,
+          activityID: this.props.match.params.activityId,
         });
+        console.log('price1', this.state.spaceData.price);
+        console.log('price', this.state.price);
       })
       .catch((error) => {
         // console.log('Error Occured');
@@ -56,8 +65,11 @@ class ActivitySpace extends React.Component {
           isLoggedIn: true,
           isLoaded: true,
           userName: response.data.userName,
+          email: response.data.email,
           // spaceReviews: this.state.spaceReviews.push(this.state.userName),
         });
+        // console.log('userName', this.state.userName);
+        // console.log('email', this.state.email);
       })
       .catch((error) => {
         this.setState({
@@ -155,6 +167,7 @@ class ActivitySpace extends React.Component {
                     <SpaceDescCovidSafety space={space} />
                     <div className="space-page-user-review">
                       {this.state.isLoggedIn ? (
+                        // <div className="isLoggedIn">
                         space.userReview !== undefined ? (
                           !this.state.isEdit ? (
                             <EditReviewRating
@@ -195,9 +208,14 @@ class ActivitySpace extends React.Component {
                           />
                         )
                       ) : (
+                        // <DateTime />
+                        // </div>
                         <div>
                           <a href="/login">
-                            <Button style={{ width: '10px' }} buttonValue={'Login to Review'} />
+                            <h3>
+                              Please login to add review and book space!! You can close license related notification.
+                            </h3>
+                            <Button style={{ width: '10px' }} buttonValue={'Login'} />
                           </a>
                         </div>
                       )}
@@ -207,6 +225,14 @@ class ActivitySpace extends React.Component {
               ) : (
                 ''
               )}
+
+              <DateTime
+                activityId={this.state.activityID}
+                email={this.state.email}
+                userName={this.state.userName}
+                price={this.state.price}
+                isLoggedIn={this.state.isLoggedIn}
+              />
               {this.state.spaceReviews.length !== 0 ? (
                 <div className="all-reviews">
                   {this.state.spaceReviews.map((review) => {

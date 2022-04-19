@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-react-calendars": "^20.1.47",
     "axios": "^0.24.0",
+    "basic-react-timepicker": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.4.0",
     "dotenv": "^14.3.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.11.19",
+    "razorpay": "^2.8.1",
     "react": "^17.0.1",
     "react-alice-carousel": "^2.4.0",
     "react-dom": "^17.0.1",
+    "react-dropdown-timepicker": "^1.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "save": "^2.4.0",
     "uuid": "^8.3.2"
   },
   "scripts": {
