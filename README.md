@@ -28,6 +28,9 @@
 		     <li><a href="#Average-Rating">Average Rating</a></li>
 		     <li><a href="#User-can-post-reviews-and-Ratings-after-logging">User can post reviews and Ratings after logging</a></li>
 		     <li><a href="#User-can-edit-reviews-and-Ratings-after-logging">User can edit reviews and Ratings after logging</a></li>
+		     <li><a href="#User-can-edit-reviews-and-Ratings-after-logging">User can select the date for booking of space</a></li>
+		     <li><a href="#User-can-edit-reviews-and-Ratings-after-logging">Users can select the start time and end time of activity for booking of space</a></li>
+		     <li><a href="#User-can-edit-reviews-and-Ratings-after-logging">User can pay require amount to book space</a></li>
                   </ul>
             </details>
 	</li>		
@@ -126,6 +129,24 @@ This is set of instructions and information to use ActivitySpace web application
 ### User can edit reviews and Ratings after logging
 
 ![image](https://github.com/sumedha1308/activityspace/blob/review_rating/public/Screenshots/edit_review_rating.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### User can select the date for booking of space
+
+![image](https://github.com/sumedha1308/activityspace/blob/master/public/Screenshots/select_date.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Users can select the start time and end time of activity for booking of space
+
+![image](https://github.com/sumedha1308/activityspace/blob/master/public/Screenshots/Select_Time.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### User can pay require amount to book space
+
+![image](https://github.com/sumedha1308/activityspace/blob/master/public/Screenshots/Payment_Page.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
