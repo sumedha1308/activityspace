@@ -28,9 +28,9 @@
 		     <li><a href="#Average-Rating">Average Rating</a></li>
 		     <li><a href="#User-can-post-reviews-and-Ratings-after-logging">User can post reviews and Ratings after logging</a></li>
 		     <li><a href="#User-can-edit-reviews-and-Ratings-after-logging">User can edit reviews and Ratings after logging</a></li>
-		     <li><a href="#User can select the date for booking of space">User can select the date for booking of space</a></li>
-		     <li><a href="#Users can select the start time and end time of activity for booking of space">Users can select the start time and end time of activity for booking of space</a></li>
-		     <li><a href="#User can pay require amount to book space">User can pay require amount to book space</a></li>
+		     <li><a href="#User-can-select-the-date-for-booking-of-space">User can select the date for booking of space</a></li>
+		     <li><a href="#Users-can-select-the-start-time-and-end-time-of-activity-for-booking-of-space">Users can select the start time and end time of activity for booking of space</a></li>
+		     <li><a href="#User-can-pay-require-amount-to-book-space">User can pay require amount to book space</a></li>
                   </ul>
             </details>
 	</li>		
